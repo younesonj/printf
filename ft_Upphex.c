@@ -23,8 +23,8 @@ int	ft_upphex(unsigned int n)
 		i += write(1, hex + n, 1);
 	else if (n >= 16)
 	{
-		i += ft_Upphex(n / 16);
-		i += ft_Upphex(n % 16);
+		i += ft_upphex(n / 16);
+		i += ft_upphex(n % 16);
 	}
 	return (i);
 }

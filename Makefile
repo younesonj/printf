@@ -2,7 +2,7 @@
 SRCS =	ft_printf.c ft_hex.c\
 		ft_putchar.c ft_putnbr.c \
 		ft_putstr.c ft_putunsigned.c \
-		ft_Upphex.c
+		ft_Upphex.c ft_putadress.c
 		
 OBJS = ${SRCS:.c=.o}
 NAME = libftprintf.a

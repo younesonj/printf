@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_hex.c                                           :+:      :+:    :+:   */
+/*   ft_putadress.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: younajja <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/27 03:07:31 by younajja          #+#    #+#             */
-/*   Updated: 2023/11/27 03:17:18 by younajja         ###   ########.fr       */
+/*   Created: 2023/11/27 22:12:26 by younajja          #+#    #+#             */
+/*   Updated: 2023/11/27 22:29:59 by younajja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_hex(unsigned long n)
+int	ft_putadress(unsigned long n)
 {
-	int		i;
-	char	*hex;
+	int	i;
 
 	i = 0;
-	hex = "0123456789abcdef";
-	if (n < 16)
-		i += write(1, hex + n, 1);
-	else if (n >= 16)
+	if (!n)
 	{
-		i += ft_hex(n / 16);
-		i += ft_hex(n % 16);
+		write(1, "(nil)", 5);
+		return (5);
 	}
+	i += ft_putstr("0x");
+	i += ft_hex(n);
 	return (i);
 }

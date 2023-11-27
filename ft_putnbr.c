@@ -20,12 +20,13 @@ int	ft_putnbr(int nb)
 	if (nb == -2147483648)
 	{
 		write(1, "-2147483648", 11);
-		i = 11;
+		return (11);
 	}
 	else if (nb < 0)
 	{
 		i += ft_putchar('-');
 		nb *= -1;
+		i += ft_putnbr(nb);
 	}
 	else if (nb > 9)
 	{
