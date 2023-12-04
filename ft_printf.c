@@ -44,6 +44,8 @@ int	ft_printf(const char *str, ...)
 
 	i = 0;
 	va_start(args, str);
+	if (str == NULL)
+		return (-1);
 	while (*str)
 	{
 		if (*str == '%')
